@@ -6,68 +6,54 @@
 
 int main()
 {
-    // HashTable* ht = create_table(CAPACITY);
-    // ht_insert(ht, "1", "First address");
-    // ht_insert(ht, "2", "Second address");
-    // print_search(ht, "1");
-    // print_search(ht, "2");
-    // print_search(ht, "3");
-    // print_table(ht);
-    // free_table(ht);
-    //return 0;
-//     int choice, key, data, n;
-//   int c = 0;
-//   init_array();
 
-//   do
-//   {
-//   printf("1.Вставить элемент в хэш-таблицу"
-//      "\n2.Удалить элемент из хэш-таблицы"
-//      "\n3.Узнать размер хэш-таблицы"
-//      "\n4.Вывести хэш-таблицу"
-//      "\n\n Пожалуйста, выберите нужный вариант: ");
+    int choice,data;
+    char* key;
+    int c = 0;
 
-//   scanf("%d", &choice);
-//   switch (choice)
-//   {
-//   case 1:
+    do
+    {
+        printf("1.Вставить элемент в хэш-таблицу"
+        "\n2.Удалить элемент из хэш-таблицы по ключу"
+        "\n3.Найти элемент по ключу"
+        "\n4.Вывести хэш-таблицу"
+        "\n5.Добавить элемент в хэш-таблицу"
+        "\n\n Пожалуйста, выберите нужный вариант: ");
 
-//     printf("Введите ключ -:\t");
-//     scanf("%d", &key);
-//     printf("Введите данные-:\t");
-//     scanf("%d", &data);
-//     insert(key, data);
+        scanf("%d", &choice);
+        switch (choice)
+        {
+            case 1:
+                THashTable* our_HashTable = hashTable_create();
+                printf("Введите ключ -:\t");
+                scanf("%d", &key);
+                printf("Введите значение-:\t");
+                scanf("%d", &data);
+                hashTable_addItem(our_HashTable, key, data);
+            break;
 
-//     break;
+            case 2:
+                printf("Введите ключ, который хотите удалить-:");
+                scanf("%d", &key);
+                hashTable_removeElement_byKey(our_HashTable, key);
+            break;
 
-//   case 2:
+            case 3:
+                printf("Введите ключ элемента, который хотите найти-:");
+                scanf("%d", &key);
+                hashTable_printSearchValue(our_HashTable, key);
+            break;
 
-//     printf("Введите ключ, который хотите удалить-:");
-//     scanf("%d", &key);
-//     remove_element(key);
+            case 4:
+                hashTable_print(our_HashTable);
+            break;
 
-//     break;
+            default:
+                printf("Неверно введены данные\n");
+        }
 
-//   case 3:
+        printf("\nПродолжить? (Нажмите 1, если да): ");
+        scanf("%d", &c);
 
-//     n = size_of_hashtable();
-//     printf("Размер хеш-таблицы-:%d\n", n);
-
-//     break;
-
-//   case 4:
-
-//     display();
-
-//     break;
-
-//   default:
-
-//     printf("Неверно введены данные\n");
-//   }
-
-//   printf("\nПродолжить? (Нажмите 1, если да): ");
-//   scanf("%d", &c);
-
-//   } while (c == 1);
+    } while (c == 1);
 }

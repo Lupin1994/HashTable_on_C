@@ -57,6 +57,7 @@
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "files.associations": {
     "algorithm": "c",
-    "random": "c"
+    "random": "c",
+    "array": "c"
   }
 }

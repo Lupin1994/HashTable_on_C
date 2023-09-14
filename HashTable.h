@@ -24,7 +24,8 @@ unsigned long hashFunction(char *key);
 void hashTable_collisionsProcessing(THashTable *hashtable, unsigned long key_index, THashTableItem *item);
 
 void item_free(THashTableItem *item);
-void item_hashTable(THashTable *hashTable);
+void hashTable_free(THashTable *hashTable);
 void hashTable_addItem(THashTable *hashTable, char *key, int value);
-char* hashTable_searchValue(THashTable *hashTable, char *key);
+void hashTable_printSearchValue(THashTable *hashTable, char *key);
+void hashTable_removeElement_byKey(THashTable *hashTable, char *key);
 
